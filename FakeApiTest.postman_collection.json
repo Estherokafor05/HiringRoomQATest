@@ -1,0 +1,1152 @@
+{
+	"info": {
+		"_postman_id": "32231dc3-a13f-4bf2-9d2d-35593de16b5f",
+		"name": "FakeApiTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get User",
+			"item": [
+				{
+					"name": "Get all User",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.test(\"Check the active environment\", () => {\r",
+									"  pm.expect(pm.environment.name).to.eql(\"TypicodeTestAPI\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response time is less than 20s\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/users",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/users",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 26 Jan 2022 20:37:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-ratelimit-limit",
+									"value": "1000"
+								},
+								{
+									"key": "x-ratelimit-remaining",
+									"value": "999"
+								},
+								{
+									"key": "x-ratelimit-reset",
+									"value": "1635261811"
+								},
+								{
+									"key": "vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=43200"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"160d-1eMSsxeJRfnVLRBmYJSbCiJZ1qQ\""
+								},
+								{
+									"key": "via",
+									"value": "1.1 vegur"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "HIT"
+								},
+								{
+									"key": "Age",
+									"value": "16401"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=u40OQ7bJhp9y7PPSmGVuQ0gEAfcMqsPHQLqrfUbwj8IB6lh%2FgqTE1RdQe9Ji%2BPcPwtPG%2FXZ1N4pULdrHkYEjDE7rctHT6Klamx2%2BsguLOioc%2BRCUI8JKA3THzWf39PjNW1Q520Re1zpiD16T75hS\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "6d3c8985c82976e7-LHR"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Leanne Graham\",\n        \"username\": \"Bret\",\n        \"email\": \"Sincere@april.biz\",\n        \"address\": {\n            \"street\": \"Kulas Light\",\n            \"suite\": \"Apt. 556\",\n            \"city\": \"Gwenborough\",\n            \"zipcode\": \"92998-3874\",\n            \"geo\": {\n                \"lat\": \"-37.3159\",\n                \"lng\": \"81.1496\"\n            }\n        },\n        \"phone\": \"1-770-736-8031 x56442\",\n        \"website\": \"hildegard.org\",\n        \"company\": {\n            \"name\": \"Romaguera-Crona\",\n            \"catchPhrase\": \"Multi-layered client-server neural-net\",\n            \"bs\": \"harness real-time e-markets\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Ervin Howell\",\n        \"username\": \"Antonette\",\n        \"email\": \"Shanna@melissa.tv\",\n        \"address\": {\n            \"street\": \"Victor Plains\",\n            \"suite\": \"Suite 879\",\n            \"city\": \"Wisokyburgh\",\n            \"zipcode\": \"90566-7771\",\n            \"geo\": {\n                \"lat\": \"-43.9509\",\n                \"lng\": \"-34.4618\"\n            }\n        },\n        \"phone\": \"010-692-6593 x09125\",\n        \"website\": \"anastasia.net\",\n        \"company\": {\n            \"name\": \"Deckow-Crist\",\n            \"catchPhrase\": \"Proactive didactic contingency\",\n            \"bs\": \"synergize scalable supply-chains\"\n        }\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Clementine Bauch\",\n        \"username\": \"Samantha\",\n        \"email\": \"Nathan@yesenia.net\",\n        \"address\": {\n            \"street\": \"Douglas Extension\",\n            \"suite\": \"Suite 847\",\n            \"city\": \"McKenziehaven\",\n            \"zipcode\": \"59590-4157\",\n            \"geo\": {\n                \"lat\": \"-68.6102\",\n                \"lng\": \"-47.0653\"\n            }\n        },\n        \"phone\": \"1-463-123-4447\",\n        \"website\": \"ramiro.info\",\n        \"company\": {\n            \"name\": \"Romaguera-Jacobson\",\n            \"catchPhrase\": \"Face to face bifurcated interface\",\n            \"bs\": \"e-enable strategic applications\"\n        }\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Patricia Lebsack\",\n        \"username\": \"Karianne\",\n        \"email\": \"Julianne.OConner@kory.org\",\n        \"address\": {\n            \"street\": \"Hoeger Mall\",\n            \"suite\": \"Apt. 692\",\n            \"city\": \"South Elvis\",\n            \"zipcode\": \"53919-4257\",\n            \"geo\": {\n                \"lat\": \"29.4572\",\n                \"lng\": \"-164.2990\"\n            }\n        },\n        \"phone\": \"493-170-9623 x156\",\n        \"website\": \"kale.biz\",\n        \"company\": {\n            \"name\": \"Robel-Corkery\",\n            \"catchPhrase\": \"Multi-tiered zero tolerance productivity\",\n            \"bs\": \"transition cutting-edge web services\"\n        }\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Chelsey Dietrich\",\n        \"username\": \"Kamren\",\n        \"email\": \"Lucio_Hettinger@annie.ca\",\n        \"address\": {\n            \"street\": \"Skiles Walks\",\n            \"suite\": \"Suite 351\",\n            \"city\": \"Roscoeview\",\n            \"zipcode\": \"33263\",\n            \"geo\": {\n                \"lat\": \"-31.8129\",\n                \"lng\": \"62.5342\"\n            }\n        },\n        \"phone\": \"(254)954-1289\",\n        \"website\": \"demarco.info\",\n        \"company\": {\n            \"name\": \"Keebler LLC\",\n            \"catchPhrase\": \"User-centric fault-tolerant solution\",\n            \"bs\": \"revolutionize end-to-end systems\"\n        }\n    },\n    {\n        \"id\": 6,\n        \"name\": \"Mrs. Dennis Schulist\",\n        \"username\": \"Leopoldo_Corkery\",\n        \"email\": \"Karley_Dach@jasper.info\",\n        \"address\": {\n            \"street\": \"Norberto Crossing\",\n            \"suite\": \"Apt. 950\",\n            \"city\": \"South Christy\",\n            \"zipcode\": \"23505-1337\",\n            \"geo\": {\n                \"lat\": \"-71.4197\",\n                \"lng\": \"71.7478\"\n            }\n        },\n        \"phone\": \"1-477-935-8478 x6430\",\n        \"website\": \"ola.org\",\n        \"company\": {\n            \"name\": \"Considine-Lockman\",\n            \"catchPhrase\": \"Synchronised bottom-line interface\",\n            \"bs\": \"e-enable innovative applications\"\n        }\n    },\n    {\n        \"id\": 7,\n        \"name\": \"Kurtis Weissnat\",\n        \"username\": \"Elwyn.Skiles\",\n        \"email\": \"Telly.Hoeger@billy.biz\",\n        \"address\": {\n            \"street\": \"Rex Trail\",\n            \"suite\": \"Suite 280\",\n            \"city\": \"Howemouth\",\n            \"zipcode\": \"58804-1099\",\n            \"geo\": {\n                \"lat\": \"24.8918\",\n                \"lng\": \"21.8984\"\n            }\n        },\n        \"phone\": \"210.067.6132\",\n        \"website\": \"elvis.io\",\n        \"company\": {\n            \"name\": \"Johns Group\",\n            \"catchPhrase\": \"Configurable multimedia task-force\",\n            \"bs\": \"generate enterprise e-tailers\"\n        }\n    },\n    {\n        \"id\": 8,\n        \"name\": \"Nicholas Runolfsdottir V\",\n        \"username\": \"Maxime_Nienow\",\n        \"email\": \"Sherwood@rosamond.me\",\n        \"address\": {\n            \"street\": \"Ellsworth Summit\",\n            \"suite\": \"Suite 729\",\n            \"city\": \"Aliyaview\",\n            \"zipcode\": \"45169\",\n            \"geo\": {\n                \"lat\": \"-14.3990\",\n                \"lng\": \"-120.7677\"\n            }\n        },\n        \"phone\": \"586.493.6943 x140\",\n        \"website\": \"jacynthe.com\",\n        \"company\": {\n            \"name\": \"Abernathy Group\",\n            \"catchPhrase\": \"Implemented secondary concept\",\n            \"bs\": \"e-enable extensible e-tailers\"\n        }\n    },\n    {\n        \"id\": 9,\n        \"name\": \"Glenna Reichert\",\n        \"username\": \"Delphine\",\n        \"email\": \"Chaim_McDermott@dana.io\",\n        \"address\": {\n            \"street\": \"Dayna Park\",\n            \"suite\": \"Suite 449\",\n            \"city\": \"Bartholomebury\",\n            \"zipcode\": \"76495-3109\",\n            \"geo\": {\n                \"lat\": \"24.6463\",\n                \"lng\": \"-168.8889\"\n            }\n        },\n        \"phone\": \"(775)976-6794 x41206\",\n        \"website\": \"conrad.com\",\n        \"company\": {\n            \"name\": \"Yost and Sons\",\n            \"catchPhrase\": \"Switchable contextually-based project\",\n            \"bs\": \"aggregate real-time technologies\"\n        }\n    },\n    {\n        \"id\": 10,\n        \"name\": \"Clementina DuBuque\",\n        \"username\": \"Moriah.Stanton\",\n        \"email\": \"Rey.Padberg@karina.biz\",\n        \"address\": {\n            \"street\": \"Kattie Turnpike\",\n            \"suite\": \"Suite 198\",\n            \"city\": \"Lebsackbury\",\n            \"zipcode\": \"31428-2261\",\n            \"geo\": {\n                \"lat\": \"-38.2386\",\n                \"lng\": \"57.2232\"\n            }\n        },\n        \"phone\": \"024-648-3804\",\n        \"website\": \"ambrose.net\",\n        \"company\": {\n            \"name\": \"Hoeger LLC\",\n            \"catchPhrase\": \"Centralized empowering task-force\",\n            \"bs\": \"target end-to-end models\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get users by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test (\"response time is less than 10s\", function (){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000)\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validate Message\", function () {\r",
+									"\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.id).to.eql(1)\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\")\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.test(\"Check the active environment\", () => {\r",
+									"  pm.expect(pm.environment.name).to.eql(\"TypicodeTestAPI\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/users/1",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get users by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/users/1",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 26 Jan 2022 20:12:47 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-ratelimit-limit",
+									"value": "1000"
+								},
+								{
+									"key": "x-ratelimit-remaining",
+									"value": "999"
+								},
+								{
+									"key": "x-ratelimit-reset",
+									"value": "1640214987"
+								},
+								{
+									"key": "vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=43200"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1fd-+2Y3G3w049iSZtw5t1mzSnunngE\""
+								},
+								{
+									"key": "via",
+									"value": "1.1 vegur"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "HIT"
+								},
+								{
+									"key": "Age",
+									"value": "12743"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=cKbMzhRE6gfV8pZgEDAqvNkfGpp4OiGTjBB0AakYl1JtT1QTOnZgLRX5UnHK%2BCQWReh%2BE8CyNJz6bsO7hQ02pIo0teBurN6WRt7Kq9iXzujTUrLNe%2F9ClZDMmo%2Bxdjaatw%2Be7%2BqaMv0HhcIyZeQW\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "6d3c65ee89bb0091-LHR"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Leanne Graham\",\n    \"username\": \"Bret\",\n    \"email\": \"Sincere@april.biz\",\n    \"address\": {\n        \"street\": \"Kulas Light\",\n        \"suite\": \"Apt. 556\",\n        \"city\": \"Gwenborough\",\n        \"zipcode\": \"92998-3874\",\n        \"geo\": {\n            \"lat\": \"-37.3159\",\n            \"lng\": \"81.1496\"\n        }\n    },\n    \"phone\": \"1-770-736-8031 x56442\",\n    \"website\": \"hildegard.org\",\n    \"company\": {\n        \"name\": \"Romaguera-Crona\",\n        \"catchPhrase\": \"Multi-layered client-server neural-net\",\n        \"bs\": \"harness real-time e-markets\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get users by invalid ID",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.test(\"Check the active environment\", () => {\r",
+									"  pm.expect(pm.environment.name).to.eql(\"TypicodeTestAPI\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response time is less than 200s\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"Not Found\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body string is empty\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/users/100",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"100"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get users by invalid ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/users/100",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"users",
+										"100"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 26 Jan 2022 20:55:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-ratelimit-limit",
+									"value": "1000"
+								},
+								{
+									"key": "x-ratelimit-remaining",
+									"value": "999"
+								},
+								{
+									"key": "x-ratelimit-reset",
+									"value": "1643230521"
+								},
+								{
+									"key": "vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=43200"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+								},
+								{
+									"key": "via",
+									"value": "1.1 vegur"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "EXPIRED"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=un9kHlEq34GFStVJXKST6sWxEQ8%2Fue44Kc4qXkuh%2FhLiVGWd7PTsbuJRpE%2FbrlwL%2Fg5104ejzsFFs4QP5fruV1xT4FT8S%2FkyYC2%2BrBQDvwie0zCSyjMGz37uZd0pUvfruBdy02B28gtoCK86KhYr\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "6d3ca437ad6788c2-LHR"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Create New User",
+			"item": [
+				{
+					"name": "Create User",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.test(\"Check the active environment\", () => {\r",
+									"  pm.expect(pm.environment.name).to.eql(\"TypicodeTestAPI\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", () => {\r",
+									"  pm.expect(pm.response.code).to.be.oneOf([201,202]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name has string\", () => {\r",
+									"  pm.response.to.have.status(\"Created\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type header is present\", () => {\r",
+									"  pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"const jsonData = pm.response.json();\r",
+									"pm.test(\"Test data type of the response\", () => {\r",
+									"  pm.expect(jsonData).to.be.an(\"object\");\r",
+									"  pm.expect(jsonData.id).to.be.a(\"number\");\r",
+									"  pm.expect(jsonData.name).to.be.a(\"string\");\r",
+									"  pm.expect(jsonData.phone).to.be.a(\"string\");\r",
+									"  pm.expect(jsonData.address).to.be.an(\"object\");\r",
+									"  pm.expect(jsonData.website).to.be.a(\"string\");\r",
+									"  pm.expect(jsonData.company).to.be.an(\"object\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Leanne Graham\",\r\n    \"username\": \"Bret\",\r\n    \"email\": \"Sincere@april.biz\",\r\n    \"address\": {\r\n        \"street\": \"Kulas Light\",\r\n        \"suite\": \"Apt. 556\",\r\n        \"city\": \"Gwenborough\",\r\n        \"zipcode\": \"92998-3874\",\r\n        \"geo\": {\r\n            \"lat\": \"-37.3159\",\r\n            \"lng\": \"81.1496\"\r\n        }\r\n    },\r\n    \"phone\": \"1-770-736-8031 x56442\",\r\n    \"website\": \"hildegard.org\",\r\n    \"company\": {\r\n        \"name\": \"Romaguera-Crona\",\r\n        \"catchPhrase\": \"Multi-layered client-server neural-net\",\r\n        \"bs\": \"harness real-time e-markets\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/posts",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Leanne Graham\",\r\n    \"username\": \"Bret\",\r\n    \"email\": \"Sincere@april.biz\",\r\n    \"address\": {\r\n        \"street\": \"Kulas Light\",\r\n        \"suite\": \"Apt. 556\",\r\n        \"city\": \"Gwenborough\",\r\n        \"zipcode\": \"92998-3874\",\r\n        \"geo\": {\r\n            \"lat\": \"-37.3159\",\r\n            \"lng\": \"81.1496\"\r\n        }\r\n    },\r\n    \"phone\": \"1-770-736-8031 x56442\",\r\n    \"website\": \"hildegard.org\",\r\n    \"company\": {\r\n        \"name\": \"Romaguera-Crona\",\r\n        \"catchPhrase\": \"Multi-layered client-server neural-net\",\r\n        \"bs\": \"harness real-time e-markets\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}/posts",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"posts"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 26 Jan 2022 20:56:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "511"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-ratelimit-limit",
+									"value": "1000"
+								},
+								{
+									"key": "x-ratelimit-remaining",
+									"value": "999"
+								},
+								{
+									"key": "x-ratelimit-reset",
+									"value": "1643230581"
+								},
+								{
+									"key": "vary",
+									"value": "Origin, X-HTTP-Method-Override, Accept-Encoding"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "Location"
+								},
+								{
+									"key": "location",
+									"value": "http://jsonplaceholder.typicode.com/posts/101"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1ff-iJRlPWfj+BUjyHpDmEgSoHRKcBE\""
+								},
+								{
+									"key": "via",
+									"value": "1.1 vegur"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=kElSKjW72i9wMN8aDBnyMZsllcrFeE3yo74jLCqnmgrF8glpVHlijlcB%2FIq9S8sS78KX%2BuHTvPDMu4U4f%2FWfHvy401hUyQ%2FZUejWJa0qJoDbHZ5994s08j4sdotuSpoDRePh%2F3FAD4M%2BVyMMlvoM\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "6d3ca5932cec88c2-LHR"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 101,\n    \"name\": \"Leanne Graham\",\n    \"username\": \"Bret\",\n    \"email\": \"Sincere@april.biz\",\n    \"address\": {\n        \"street\": \"Kulas Light\",\n        \"suite\": \"Apt. 556\",\n        \"city\": \"Gwenborough\",\n        \"zipcode\": \"92998-3874\",\n        \"geo\": {\n            \"lat\": \"-37.3159\",\n            \"lng\": \"81.1496\"\n        }\n    },\n    \"phone\": \"1-770-736-8031 x56442\",\n    \"website\": \"hildegard.org\",\n    \"company\": {\n        \"name\": \"Romaguera-Crona\",\n        \"catchPhrase\": \"Multi-layered client-server neural-net\",\n        \"bs\": \"harness real-time e-markets\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create user with invalid email address",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.test(\"Check the active environment\", () => {",
+									"  pm.expect(pm.environment.name).to.eql(\"TypicodeTestAPI\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/posts",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user with invalid ID",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.test(\"Check the active environment\", () => {",
+									"  pm.expect(pm.environment.name).to.eql(\"TypicodeTestAPI\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"567887765\",\r\n    \"username\": \"Bret\",\r\n    \"email\": \"Sincere@april.biz\",\r\n    \"address\": {\r\n        \"street\": \"Kulas Light\",\r\n        \"suite\": \"Apt. 556\",\r\n        \"city\": \"Gwenborough\",\r\n        \"zipcode\": \"92998-3874\",\r\n        \"geo\": {\r\n            \"lat\": \"-37.3159\",\r\n            \"lng\": \"81.1496\"\r\n        }\r\n    },\r\n    \"phone\": \"1-770-736-8031 x56442\",\r\n    \"website\": \"hildegard.org\",\r\n    \"company\": {\r\n        \"name\": \"Romaguera-Crona\",\r\n        \"catchPhrase\": \"Multi-layered client-server neural-net\",\r\n        \"bs\": \"harness real-time e-markets\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/posts",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user without a name",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.test(\"Check the active environment\", () => {",
+									"  pm.expect(pm.environment.name).to.eql(\"TypicodeTestAPI\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"567887765\",\r\n    \"username\": \"Bret\",\r\n    \"email\": \"Sincere@april.biz\",\r\n    \"address\": {\r\n        \"street\": \"Kulas Light\",\r\n        \"suite\": \"Apt. 556\",\r\n        \"city\": \"Gwenborough\",\r\n        \"zipcode\": \"92998-3874\",\r\n        \"geo\": {\r\n            \"lat\": \"-37.3159\",\r\n            \"lng\": \"81.1496\"\r\n        }\r\n    },\r\n    \"phone\": \"1-770-736-8031 x56442\",\r\n    \"website\": \"hildegard.org\",\r\n    \"company\": {\r\n        \"name\": \"Romaguera-Crona\",\r\n        \"catchPhrase\": \"Multi-layered client-server neural-net\",\r\n        \"bs\": \"harness real-time e-markets\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/posts",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user without a username",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.test(\"Check the active environment\", () => {",
+									"  pm.expect(pm.environment.name).to.eql(\"TypicodeTestAPI\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"567887765\",\r\n    \"username\": \"Bret\",\r\n    \"email\": \"Sincere@april.biz\",\r\n    \"address\": {\r\n        \"street\": \"Kulas Light\",\r\n        \"suite\": \"Apt. 556\",\r\n        \"city\": \"Gwenborough\",\r\n        \"zipcode\": \"92998-3874\",\r\n        \"geo\": {\r\n            \"lat\": \"-37.3159\",\r\n            \"lng\": \"81.1496\"\r\n        }\r\n    },\r\n    \"phone\": \"1-770-736-8031 x56442\",\r\n    \"website\": \"hildegard.org\",\r\n    \"company\": {\r\n        \"name\": \"Romaguera-Crona\",\r\n        \"catchPhrase\": \"Multi-layered client-server neural-net\",\r\n        \"bs\": \"harness real-time e-markets\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/posts",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user with invalid name as numbers",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.test(\"Check the active environment\", () => {",
+									"  pm.expect(pm.environment.name).to.eql(\"TypicodeTestAPI\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"567887765\",\r\n    \"username\": \"Bret\",\r\n    \"email\": \"Sincere@april.biz\",\r\n    \"address\": {\r\n        \"street\": \"Kulas Light\",\r\n        \"suite\": \"Apt. 556\",\r\n        \"city\": \"Gwenborough\",\r\n        \"zipcode\": \"92998-3874\",\r\n        \"geo\": {\r\n            \"lat\": \"-37.3159\",\r\n            \"lng\": \"81.1496\"\r\n        }\r\n    },\r\n    \"phone\": \"1-770-736-8031 x56442\",\r\n    \"website\": \"hildegard.org\",\r\n    \"company\": {\r\n        \"name\": \"Romaguera-Crona\",\r\n        \"catchPhrase\": \"Multi-layered client-server neural-net\",\r\n        \"bs\": \"harness real-time e-markets\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/posts",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user without an address details",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.test(\"Check the active environment\", () => {",
+									"  pm.expect(pm.environment.name).to.eql(\"TypicodeTestAPI\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"567887765\",\r\n    \"username\": \"Bret\",\r\n    \"email\": \"Sincere@april.biz\",\r\n    \"address\": {\r\n        \"street\": \"Kulas Light\",\r\n        \"suite\": \"Apt. 556\",\r\n        \"city\": \"Gwenborough\",\r\n        \"zipcode\": \"92998-3874\",\r\n        \"geo\": {\r\n            \"lat\": \"-37.3159\",\r\n            \"lng\": \"81.1496\"\r\n        }\r\n    },\r\n    \"phone\": \"1-770-736-8031 x56442\",\r\n    \"website\": \"hildegard.org\",\r\n    \"company\": {\r\n        \"name\": \"Romaguera-Crona\",\r\n        \"catchPhrase\": \"Multi-layered client-server neural-net\",\r\n        \"bs\": \"harness real-time e-markets\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/posts",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user without company details",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.test(\"Check the active environment\", () => {",
+									"  pm.expect(pm.environment.name).to.eql(\"TypicodeTestAPI\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"567887765\",\r\n    \"username\": \"Bret\",\r\n    \"email\": \"Sincere@april.biz\",\r\n    \"address\": {\r\n        \"street\": \"Kulas Light\",\r\n        \"suite\": \"Apt. 556\",\r\n        \"city\": \"Gwenborough\",\r\n        \"zipcode\": \"92998-3874\",\r\n        \"geo\": {\r\n            \"lat\": \"-37.3159\",\r\n            \"lng\": \"81.1496\"\r\n        }\r\n    },\r\n    \"phone\": \"1-770-736-8031 x56442\",\r\n    \"website\": \"hildegard.org\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/posts",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Update User",
+			"item": [
+				{
+					"name": "Update user record",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 11,\r\n    \"name\": \"Ferdinard frank\",\r\n    \"username\": \"Bret\",\r\n    \"email\": \"Sincere@april.biz\",\r\n    \"address\": {\r\n        \"street\": \"Kulas Light\",\r\n        \"suite\": \"Apt. 556\",\r\n        \"city\": \"Gwenborough\",\r\n        \"zipcode\": \"92998-3874\",\r\n        \"geo\": {\r\n            \"lat\": \"-37.3159\",\r\n            \"lng\": \"81.1496\"\r\n        }\r\n    },\r\n    \"phone\": \"gpooc\",\r\n    \"website\": \"hildegard.org\",\r\n    \"company\": {\r\n        \"name\": \"Romaguera-Crona\",\r\n        \"catchPhrase\": \"Multi-layered client-server neural-net\",\r\n        \"bs\": \"harness real-time e-markets\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/posts/1",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user record with invalid ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 11,\r\n    \"name\": \"Ferdinard frank\",\r\n    \"username\": \"Bret\",\r\n    \"email\": \"Sincere@april.biz\",\r\n    \"address\": {\r\n        \"street\": \"Kulas Light\",\r\n        \"suite\": \"Apt. 556\",\r\n        \"city\": \"Gwenborough\",\r\n        \"zipcode\": \"92998-3874\",\r\n        \"geo\": {\r\n            \"lat\": \"-37.3159\",\r\n            \"lng\": \"81.1496\"\r\n        }\r\n    },\r\n    \"phone\": \"1-770-736-8031 x56442\",\r\n    \"website\": \"hildegard.org\",\r\n    \"company\": {\r\n        \"name\": \"Romaguera-Crona\",\r\n        \"catchPhrase\": \"Multi-layered client-server neural-net\",\r\n        \"bs\": \"harness real-time e-markets\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/posts/1",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search Users",
+			"item": [
+				{
+					"name": "Search users by user data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test (\"response time is less than 10s\", function (){",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000)",
+									"})",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\")",
+									"})",
+									"",
+									"pm.test(\"email string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Bret\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/users/?username=Bret",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "Bret"
+								},
+								{
+									"key": "email",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
