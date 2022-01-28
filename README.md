@@ -7,3 +7,4 @@
 3.click on the 3 dot beside the collection 
 4.click on "Run collection"
 5. All test in that postman collection would run simultaneously.
+6. Done 
