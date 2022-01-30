@@ -2,7 +2,7 @@
 
 ## Documentation
 
-> please clone this repository into your local computer to run this test.
+> Please clone this repository into your local computer to run this test.
 
 ### API Test
 *Steps to run the API collection*
