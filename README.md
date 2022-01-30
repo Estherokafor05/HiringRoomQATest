@@ -4,11 +4,10 @@
 
 > Please clone this repository into your local computer to run this test.
 
-#### prerequisites
-*install Postman*
-*instal nodejs
-*install npm*
-
+### Prerequisite
+1. install postman
+2. install node js
+3. install npm
 
 ### API Test
 *Steps to run the API collection*
