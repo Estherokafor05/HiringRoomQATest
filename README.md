@@ -9,6 +9,7 @@
 1. Import the API Test folder into your postman 
 2. Make sure you are in the environment *TypicodeTestApi*
 3. Click on the three dots beside the collection folder and select option *run collection*
+#### The postman test will run via the postman test runner
 
 ### UI Test
 *Steps to run the UI test*
