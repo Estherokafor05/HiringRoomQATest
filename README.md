@@ -6,9 +6,9 @@
 
 #### prerequisites
 
->install Postman
->install node Js
->Install npm 
+*install Postman*
+*install node Js*
+*Install npm*
 
 
 ### API Test
